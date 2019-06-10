@@ -1,0 +1,201 @@
+/* =================================
+  Base Element Styles
+==================================== */
+
+:root {
+  --box-bg-color: rgba(0, 0, 0, 0.05);
+  --box-border-color: rgba(0, 0, 0, 0.1);
+  --h1-size: 16px;
+  --other-size: 13px;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Open sans", Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 {
+  font-size: var(--h1-size);
+}
+a {
+  font-size: var(--other-size);
+  text-decoration: none;
+  color: black;
+}
+li {
+  font-size: var(--other-size);
+}
+.header {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em auto;
+}
+
+.employees {
+  margin: 1em auto;
+  width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+}
+
+.employees .employee {
+  background-color: var(--box-bg-color);
+  text-align: center;
+  border: solid 1px var(--box-border-color);
+  min-width: 310px;
+  width: 20%;
+  height: 87%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: start;
+  align-items: center;
+  overflow: hidden;
+  min-width: 283px;
+  min-height: 85px;
+}
+.employees .employee h1 {
+  margin: 0;
+}
+.employees .employee li {
+  overflow: hidden;
+}
+
+.employees .employee .avatar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+  justify-self: center;
+}
+.employees .employee .avatar a {
+}
+.employees .employee .avatar a img {
+  border-radius: 50%;
+}
+
+.employees .employee .name {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-self: end;
+}
+.employees .employee .email {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.employees .employee .city {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  align-self: start;
+}
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+#lightbox {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 40%;
+  height: 50%;
+  z-index: 100;
+  text-align: center;
+  line-height: 0;
+  border: solid 1px var(--box-border-color);
+  background-color: white;
+  /* position: relative; */
+}
+#lightbox .closeicon {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  margin: 0;
+}
+#lightbox .lefticon {
+  position: absolute;
+  top: 49%;
+  left: 5%;
+  margin: 0;
+}
+#lightbox .righticon {
+  position: absolute;
+  top: 49%;
+  right: 5%;
+  margin: 0;
+}
+
+#lightbox .employee {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 100%;
+  position: relative;
+  width: 95%;
+  height: 95%;
+  margin: 2px auto;
+}
+
+#lightbox .employee li {
+  margin: 2px auto;
+}
+#lightbox .employee .email a {
+  display: block;
+  margin-top: 12px;
+}
+#lightbox .employee .avatar img {
+  border-radius: 50%;
+}
+#lightbox .employee .avatar {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  align-self: end;
+}
+
+#lightbox .employee .name,
+#lightbox .employee .email,
+#lightbox .employee .city {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  height: 26px;
+}
+#lightbox .employee .name {
+  align-self: start;
+}
+#lightbox .employee .email {
+  align-self: center;
+}
+
+#lightbox .employee .city {
+  align-self: end;
+}
+#lightbox .employee div {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+}
+#lightbox .employee div li {
+  height: 19px;
+}
+
+/* #jquery-lightbox {
+  border: solid 1px red;
+  margin-top: 10%;
+}
+
+#jquery-lightbox #lightbox-container-image-box {
+  border: solid 1px red;
+  height: 80px;
+}
+
+#jquery-lightbox #lightbox-container-image-data-box {
+  border: solid 1px yellow;
+  height: 180px;
+  display: block !important;
+} */
